@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Name Generator
- * Plugin URI: *
+ * Plugin URI: http://johnregan3.github.io/name-generator/
  * Description: Create fun random Name Generators for your WordPress website.
  * Author: John Regan
  * Author URI: http://johnregan3.me

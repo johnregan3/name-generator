@@ -6,8 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Fetches all Generator Actions
- *
- * @since  1.0
  */
 function gens_get_gen_actions() {
 	if ( isset( $_GET['gen-action'] ) ) {
@@ -19,8 +17,6 @@ add_action( 'init', 'gens_get_gen_actions' );
 
 /**
  * Checks for POST/GET information
- *
- * @since  1.0
  */
 function gen_process_actions() {
 	if ( isset( $_POST['gen-action'] ) ) {
@@ -37,7 +33,6 @@ add_action( 'admin_init', 'gen_process_actions' );
 /**
  * Fetches array of new Generator information, then sends it to be saved.
  *
- * @since  1.0
  * @param  array  $data  Data of gen to be added
  */
 function gens_add_gen( $data ) {
@@ -66,7 +61,6 @@ add_action( 'gens_add_gen', 'gens_add_gen' );
 /**
  * Fetches array of new gen information, then saves it and redirects.
  *
- * @since  1.0
  * @param  array  $details  Data of gen to be added
  * @param  int    $gen_id  gen for which to store the data.
  */
@@ -101,7 +95,6 @@ function gens_store_gen( $details, $gen_id = null ) {
 /**
  * Fetches array of new gen information, then sends it to be saved.
  *
- * @since  1.0
  * @param  array  $data  Data of gen to be added
  */
 function gens_edit_gen( $data ) {
@@ -127,7 +120,6 @@ add_action( 'gens_edit_gen', 'gens_edit_gen' );
 /**
  * Checks to see if gen exists
  *
- * @since  1.0
  * @param  int  $gen_id  gen for which to store the data.
  * @return bool
  */
@@ -142,7 +134,6 @@ function gens_gen_exists( $gen_id ) {
 /**
  * Checks to see if gen exists
  *
- * @since  1.0
  * @param  int    $gen_id  gen for which to store the data.
  * @return object $gen     Post object for requested gen ID.
  */
@@ -158,7 +149,6 @@ function gens_get_gen( $gen_id ) {
 /**
  * Listens for when a delete link is clicked and deletes the gen
  *
- * @since  1.0
  * @param  array  $data
  */
 function gens_delete_action( $data ) {
@@ -174,7 +164,6 @@ add_action( 'gens_delete_action', 'gens_delete_action' );
 /**
  * Deletes a gen
  *
- * @since 1.0
  * @param int $gen_id gen ID
  */
 function gens_remove_gen( $gen_id = 0 ) {

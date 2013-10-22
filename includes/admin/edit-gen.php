@@ -6,8 +6,6 @@ if ( ! defined( 'ABSPATH' ) )
 
 /**
  * Content of the Edit Name Generator
- *
- * @since 1.0
  */
 
 if ( ! isset( $_GET['gen_id'] ) || ! is_numeric( $_GET['gen_id'] ) )

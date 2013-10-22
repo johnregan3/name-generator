@@ -1,12 +1,11 @@
 <?php
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) )
+	exit();
 
 /**
  * ngjr3 WP Actions Table
- *
- * @since  1.0
  */
 
 // Load WP_List_Table if not loaded
@@ -18,15 +17,13 @@ class Name_Generator_Table extends WP_List_Table {
 
 	/**
 	 * Set up Table
-	 *
-	 * @since  1.0
 	 */
 	public function __construct() {
 
 		parent::__construct( array(
-			'singular'  => 'gen',    // Singular name of the listed records
-			'plural'    => 'gens',        // Plural name of the listed records
-			'ajax'      => false                        // Does this table support ajax?
+			'singular'  => 'gen',
+			'plural'    => 'gens',
+			'ajax'      => false
 		) );
 	}
 
@@ -34,7 +31,6 @@ class Name_Generator_Table extends WP_List_Table {
 	/**
 	 * Retrieve the table columns
 	 *
-	 * @since  1.0
 	 * @return array $columns Array of all the list table columns
 	 */
 	public function get_columns() {
@@ -53,7 +49,6 @@ class Name_Generator_Table extends WP_List_Table {
 	/**
 	 * Retrieve the table's sortable columns
 	 *
-	 * @since  1.0
 	 * @return array Array of all the sortable columns
 	 */
 	public function get_sortable_columns() {
@@ -67,7 +62,6 @@ class Name_Generator_Table extends WP_List_Table {
 	/**
 	 * This function renders most of the columns in the list table.
 	 *
-	 * @since 1.0
 	 * @param array  $item Contains all the data of the reward
 	 * @param string $column_name The name of the column
 	 *
@@ -84,15 +78,14 @@ class Name_Generator_Table extends WP_List_Table {
 	/**
 	 * Render the Name Column
 	 *
-	 * @since  1.0
 	 * @param  array  $item  Contains all the data of the generator
 	 * @return array  $item  Data shown in the Name column
 	 */
 	function column_name( $item ) {
-		$row     = get_post( $item['ID'] );
+		$row          = get_post( $item['ID'] );
 		$base         = admin_url( 'admin.php?page=name_generator.php&gen_id=' . $item['ID'] );
 		$row_actions  = array();
-		$row_actions['edit'] = '<a href="' . add_query_arg( array( 'gen-action' => 'edit_gen', 'gen_id' => $row->ID ) ) . '">' . __( 'Edit', 'ngjr3' ) . '</a>';
+		$row_actions['edit']   = '<a href="' . add_query_arg( array( 'gen-action' => 'edit_gen', 'gen_id' => $row->ID ) ) . '">' . __( 'Edit', 'ngjr3' ) . '</a>';
 		$row_actions['delete'] = '<a href="' . wp_nonce_url( add_query_arg( array( 'gen-action' => 'delete_action', 'gen_id' => $row->ID ) ), 'ngjr3_nonce' ) . '">' . __( 'Delete', 'ngjr3' ) . '</a>';
 		return $item['name'] . $this->row_actions( $row_actions );
 	}
@@ -101,7 +94,6 @@ class Name_Generator_Table extends WP_List_Table {
 	/**
 	 * Render the checkbox column
 	 *
-	 * @since  1.0
 	 * @param  array $item Contains all the data for the checkbox column
 	 * @return string Displays a checkbox
 	 */
@@ -113,7 +105,6 @@ class Name_Generator_Table extends WP_List_Table {
 	/**
 	 * Retrieve the bulk actions
 	 *
-	 * @since  1.0
 	 * @return array $actions Array of the bulk actions
 	 */
 	public function get_bulk_actions() {
@@ -128,7 +119,6 @@ class Name_Generator_Table extends WP_List_Table {
 	/**
 	 * Process the delete bulk action
 	 *
-	 * @since  1.0
 	 * @return void
 	 */
 	public function process_bulk_action() {
@@ -148,7 +138,6 @@ class Name_Generator_Table extends WP_List_Table {
 	/**
 	 * Retrieve all the data
 	 *
-	 * @since  1.0
 	 * @return array Array of all the data for the action 111s
 	 */
 	public function gens_table_data() {
@@ -182,8 +171,6 @@ class Name_Generator_Table extends WP_List_Table {
 
 	/**
 	 * Render Table
-	 *
-	 * @since 1.0
 	 */
 	public function prepare_items() {
 		$columns               = $this->get_columns();

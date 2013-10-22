@@ -52,6 +52,10 @@ class Name_Generator_Plugin {
 	 */
 	static function uninstall() {
 		unregister_setting( 'ngjr3_settings_group', 'ngjr3_settings' );
+		$posts = get_posts( array( 'post_type' => 'name_gen', 'posts_per_page' => -1 ) );
+		foreach ( $posts as $post ) {
+			wp_delete_post( $post->ID, true );
+		}
 	}
 
 	/**

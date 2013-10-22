@@ -2,12 +2,10 @@
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) )
-	exit;
+	exit();
 
 /**
  * Content of the Add Name Generator Page
- *
- * @since 1.0
  */
 
 ?>

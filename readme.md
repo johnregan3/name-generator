@@ -2,6 +2,17 @@
 
 Create fun random Name Generators for your WordPress website.  Name Generators combine random selections from lists of words to make wacky strings of text.  This plugin allows for multiple Name Generators on your site.
 
+### Features ###
+
+*  Add some fun to your website!
+
+*  Use multiple Name Generators
+
+*  Easily insert Name Generators into content
+
+*  Use on any Post, Page or Custom Post Type
+
+
 ### Screenshots ###
 
 ![Add Generator](https://raw.github.com/johnregan3/name-generator/master/assets/screenshot-01.png "Add Generator")

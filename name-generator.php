@@ -2,11 +2,14 @@
 
 /**
  * Plugin Name: Name Generator
- * Plugin URI: http://johnregan3.github.io/name-generator/
+ * Plugin URI:  http://johnregan3.github.io/name-generator/
  * Description: Create fun random Name Generators for your WordPress website.
- * Author: John Regan
- * Author URI: http://johnregan3.me
- * Version: 1.0
+ * Author:      John Regan (johnregan3)
+ * Author URI:  http://johnregan3.me
+ * Version:     1.0
+ * Text Domain: admin-search
+ * License:     GPLv2+
+ *
  * Copyright 2013  John Regan  (email : johnregan3@outlook.com)
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,7 +26,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  *
  * @author John Regan
- * @version 0.9
+ * @version 1.0
  */
 
 
@@ -62,8 +65,20 @@ class Name_Generator_Plugin {
 	 * Enqueue Front End Styles and Scripts
 	 */
 	static function scripts( ) {
-		wp_register_script( 'name-gen-script', plugins_url( 'includes/js/scripts.js', __FILE__), array( 'jquery' ), 1.0, true );
-		wp_localize_script( 'name-gen-script', 'gen_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+		wp_register_script(
+			'name-gen-script',
+			plugins_url( 'includes/js/scripts.js', __FILE__),
+			array( 'jquery' ),
+			1.0,
+			true
+		);
+
+		wp_localize_script(
+			'name-gen-script',
+			'gen_ajax',
+			array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) )
+		);
+
 		wp_enqueue_script( 'name-gen-script' );
 	}
 
@@ -71,7 +86,14 @@ class Name_Generator_Plugin {
 	 * Set up Name Generator Page
 	 */
 	static function register_submenu_page() {
-		add_submenu_page( 'tools.php', __( 'Name Generators', 'ngjr3' ), __( 'Name Generators', 'ngjr3' ), 'manage_options', basename( __FILE__ ), array( __CLASS__, 'admin_page' ) );
+		add_submenu_page(
+			'tools.php',
+			__( 'Name Generators', 'ngjr3' ),
+			__( 'Name Generators', 'ngjr3' ),
+			'manage_options',
+			basename( __FILE__ ),
+			array( __CLASS__, 'admin_page' )
+		);
 	}
 
 	/**

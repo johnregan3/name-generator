@@ -6,7 +6,7 @@ Create fun random Name Generators for your WordPress website.  Name Generators c
 
 *  Add some fun to your website!
 
-*  Use multiple Name Generators
+*  Save multiple Name Generators
 
 *  Easily insert Name Generators into content
 

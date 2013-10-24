@@ -46,7 +46,7 @@ Create fun random Name Generators for your WordPress website.  Name Generators c
 
 == Installation ==
 
-Install Simple Copy Post just as you would any other WP Plugin:
+Install Name Generator just as you would any other WP Plugin:
 
 1.  Download Name Generator from WordPress.org.
 
